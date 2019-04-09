@@ -9,7 +9,7 @@ public class snek {
 	List<Point> snekPoints;
 	int xDirection, yDirection;
 	boolean isMoving, elongate;
-	final int STARTSIZE = 20, STARTX = 150, STARTY = 150;
+	final int STARTSIZE = 25, STARTX = 200, STARTY = 200;
 
 	public snek() {
 		snekPoints = new ArrayList<Point>();
@@ -80,7 +80,7 @@ public class snek {
 		yDirection = y;
 	}// setYDirection
 
-	// X positioin of thead of snake
+	// X position of head of snake
 	public int getX() {
 		return snekPoints.get(0).getX();
 	}// getX
@@ -88,7 +88,7 @@ public class snek {
 	public int getY() {
 		return snekPoints.get(0).getY();
 	}//getY
-	
+
 	public void setElongate(boolean b) {
 		elongate = b;
 	}

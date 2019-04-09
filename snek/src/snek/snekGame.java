@@ -29,16 +29,17 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	}// init
 
 	public void paint(Graphics g) {
-		gfx.setColor(Color.black);
+		gfx.setColor(Color.darkGray);
 		gfx.fillRect(0, 0, 400, 400);
 		if (!gameOver) {
 			snek.draw(gfx);
-			gfx.drawString("Points:" + token.getScore(), 5, 13); // draws string points
+			gfx.drawString("Score:" + token.getScore(), 5, 15); // draws string points
 			token.draw(gfx);
 		} else {
-			gfx.setColor(Color.RED);
-			gfx.drawString("Game Over", 180, 150);
-			gfx.drawString("Score: " + token.getScore(), 180, 170);
+			gfx.setColor(Color.red);
+			gfx.drawString("Game Over", 175, 170);
+			gfx.setColor(Color.white);
+			gfx.drawString("Score: " + token.getScore(), 175, 190);
 		} // else
 
 		g.drawImage(img, 0, 0, null); // draws image inside screen
