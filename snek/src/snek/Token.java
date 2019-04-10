@@ -34,7 +34,7 @@ public class Token {
 		if (snekX >= (x - 1) && snekX <= (x + 25)) // snek eat area size
 			if (snekY >= (y - 1) && snekY <= (y + 25)) {
 				changePosition();
-				score++;
+				score += 10;
 				snek.setElongate(true);
 				return true;
 			} // if
