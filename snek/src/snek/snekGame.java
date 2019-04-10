@@ -2,6 +2,7 @@ package snek;
 
 import java.applet.Applet;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -33,13 +34,18 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		gfx.fillRect(0, 0, 1400, 800);
 		if (!gameOver) {
 			snek.draw(gfx);
-			gfx.drawString("Score:" + token.getScore(), 5, 15); // draws string points
+			gfx.drawString("Score:" + token.getScore(), 15, 30); // draws string points
 			token.draw(gfx);
+			gfx.setFont(new Font("Times New Roman", Font.PLAIN, 25));// score font and font-size
+			
+			
 		} else {
 			gfx.setColor(Color.red);
-			gfx.drawString("Game Over", 175, 170);
-			gfx.setColor(Color.white);
-			gfx.drawString("Score: " + token.getScore(), 175, 190);
+			gfx.drawString("Game Over!", 175, 170);
+			gfx.setFont(new Font("Times New Roman", Font.BOLD, 25));// font and font-size
+			gfx.setColor(Color.green);
+			gfx.drawString("Score: " + token.getScore(), 200, 220);
+			gfx.setFont(new Font("Times New Roman", Font.BOLD, 25));// font and font-size
 		} // else
 
 		g.drawImage(img, 0, 0, null); // draws image inside screen
