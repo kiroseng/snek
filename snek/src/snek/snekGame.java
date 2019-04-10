@@ -17,9 +17,9 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	Token token;
 
 	public void init() {
-		this.resize(400, 400);
+		this.resize(1400, 800);
 		gameOver = false;
-		img = createImage(400, 400);
+		img = createImage(1400, 800);
 		gfx = img.getGraphics();
 		this.addKeyListener(this);
 		snek = new snek();
@@ -30,7 +30,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 
 	public void paint(Graphics g) {
 		gfx.setColor(Color.darkGray);
-		gfx.fillRect(0, 0, 400, 400);
+		gfx.fillRect(0, 0, 1400, 800);
 		if (!gameOver) {
 			snek.draw(gfx);
 			gfx.drawString("Score:" + token.getScore(), 5, 15); // draws string points
@@ -64,7 +64,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			} // if not game over
 			this.repaint();
 			try {
-				Thread.sleep(40);
+				Thread.sleep(20);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} // catch
@@ -72,10 +72,10 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	}// run
 
 	public void checkGameOver() {
-		if (snek.getX() < 0 || snek.getX() > 396) { // if snek runs to wall in X position
+		if (snek.getX() < 0 || snek.getX() > 1400-20) { // if snek runs to wall in X position
 			gameOver = true;
 		} // if snek runs wall in X position
-		if (snek.getY() < 0 || snek.getY() > 396) { // if snek runs to wall in Y position
+		if (snek.getY() < 0 || snek.getY() > 800-20) { // if snek runs to wall in Y position
 			gameOver = true;
 		} // if snek runs wall in Y position
 		if (snek.snekCollision()) {

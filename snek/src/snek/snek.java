@@ -9,7 +9,7 @@ public class snek {
 	List<Point> snekPoints;
 	int xDirection, yDirection;
 	boolean isMoving, elongate;
-	final int STARTSIZE = 25, STARTX = 200, STARTY = 200;
+	final int STARTSIZE = 80, STARTX = 200, STARTY = 200; // Snek length and starting point
 
 	public snek() {
 		snekPoints = new ArrayList<Point>();
@@ -26,7 +26,7 @@ public class snek {
 	public void draw(Graphics g) {
 		g.setColor(Color.white);
 		for (Point p : snekPoints) {
-			g.fillRect(p.getX(), p.getY(), 4, 4);
+			g.fillRect(p.getX(), p.getY(), 20, 20); // snek thickness
 		} // for
 	}// draw
 

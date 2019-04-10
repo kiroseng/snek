@@ -9,14 +9,14 @@ public class Token {
 	private snek snek;
 
 	public Token(snek s) {
-		x = (int) (Math.random() * 395);
-		y = (int) (Math.random() * 395);
+		x = (int) (Math.random() * 1400);
+		y = (int) (Math.random() * 800);
 		snek = s;
 	}// token
 
 	public void changePosition() {
-		x = (int) (Math.random() * 395);
-		y = (int) (Math.random() * 395);
+		x = (int) (Math.random() * 1400);
+		y = (int) (Math.random() * 800);
 	}// changePosition
 
 	public int getScore() {
@@ -25,7 +25,7 @@ public class Token {
 
 	public void draw(Graphics g) {
 		g.setColor(Color.green);
-		g.fillRect(x, y, 6, 6);
+		g.fillRect(x, y, 20, 20);
 	}// draw
 
 	public boolean snekCollision() { // tarkistaa saako snek syötyä "omenan"
