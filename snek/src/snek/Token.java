@@ -15,8 +15,8 @@ public class Token {
 	}// token
 
 	public void changePosition() {
-		x = (int) (Math.random() * 1400);
-		y = (int) (Math.random() * 800);
+		x = (int) (Math.random() * 1380);
+		y = (int) (Math.random() * 780);
 	}// changePosition
 
 	public int getScore() {
