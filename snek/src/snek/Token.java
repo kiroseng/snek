@@ -29,10 +29,10 @@ public class Token {
 	}// draw
 
 	public boolean snekCollision() { // tarkistaa saako snek syötyä "omenan"
-		int snekX = snek.getX() + 2;
-		int snekY = snek.getY() + 2;
-		if (snekX >= (x - 1) && snekX <= (x + 7))
-			if (snekY >= (y - 1) && snekY <= (y + 7)) {
+		int snekX = snek.getX() + 5;
+		int snekY = snek.getY() + 5;
+		if (snekX >= (x - 1) && snekX <= (x + 25)) // snek eat area size
+			if (snekY >= (y - 1) && snekY <= (y + 25)) {
 				changePosition();
 				score++;
 				snek.setElongate(true);
