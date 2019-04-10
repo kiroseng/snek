@@ -24,7 +24,7 @@ public class snek {
 	}// Snek
 
 	public void draw(Graphics g) {
-		g.setColor(Color.white);
+		g.setColor(Color.green);
 		for (Point p : snekPoints) {
 			g.fillRect(p.getX(), p.getY(), 20, 20); // snek thickness
 		} // for
