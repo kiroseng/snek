@@ -24,7 +24,7 @@ public class Token {
 	}// getScore
 
 	public void draw(Graphics g) {
-		g.setColor(Color.red);
+		g.setColor(Color.red); // "omenan" väri
 		g.fillRect(x, y, 20, 20);
 	}// draw
 
