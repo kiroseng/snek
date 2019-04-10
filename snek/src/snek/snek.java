@@ -24,7 +24,7 @@ public class snek {
 	}// Snek
 
 	public void draw(Graphics g) {
-		g.setColor(Color.green);
+		g.setColor(Color.green); //snekin ja scoren väri pelin aikana
 		for (Point p : snekPoints) {
 			g.fillRect(p.getX(), p.getY(), 20, 20); // snek thickness
 		} // for
