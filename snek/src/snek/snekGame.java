@@ -70,7 +70,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			} // if not game over
 			this.repaint();
 			try {
-				Thread.sleep(20);
+				Thread.sleep(15); // snake speed (smaller is faster)
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} // catch
