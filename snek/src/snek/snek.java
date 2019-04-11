@@ -9,7 +9,7 @@ public class snek {
 	List<Point> snekPoints;
 	int xDirection, yDirection;
 	boolean isMoving, elongate;
-	final int STARTSIZE = 80, STARTX = 200, STARTY = 200; // Snek length and starting point
+	final int STARTSIZE = 80, STARTX = 200, STARTY = 200; // snek length and starting point
 
 	public snek() {
 		snekPoints = new ArrayList<Point>();
@@ -24,7 +24,7 @@ public class snek {
 	}// Snek
 
 	public void draw(Graphics g) {
-		g.setColor(Color.green); //snekin ja scoren väri pelin aikana
+		g.setColor(Color.green); // snek color
 		for (Point p : snekPoints) {
 			g.fillRect(p.getX(), p.getY(), 20, 20); // snek thickness
 		} // for
@@ -80,7 +80,7 @@ public class snek {
 		yDirection = y;
 	}// setYDirection
 
-	// X position of head of snake
+	// X position of snek head
 	public int getX() {
 		return snekPoints.get(0).getX();
 	}// getX
