@@ -40,6 +40,8 @@ public class snek {
 			} // for
 			snekPoints.set(0, newStart);
 			if(elongate) {
+				snekPoints.add(last); // snek grows after eating apple
+				snekPoints.add(last);
 				snekPoints.add(last);
 				elongate = false;
 			}//if elongate
