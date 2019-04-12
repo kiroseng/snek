@@ -24,13 +24,13 @@ public class Token {
 	}// getScore
 
 	public void draw(Graphics g) {
-		g.setColor(Color.red); // "omenan" v�ri
+		g.setColor(Color.red); // apple color
 		g.fillRect(x, y, 20, 20);
 	}// draw
 
-	public boolean snekCollision() { // tarkistaa saako snek syötyä "omenan"
-		int snekX = snek.getX() + 5;
-		int snekY = snek.getY() + 5;
+	public boolean snekCollision() { // Checks collision with apple and snake
+		int snekX = snek.getX() + 19;
+		int snekY = snek.getY() + 19;
 		if (snekX >= (x - 1) && snekX <= (x + 25)) // snek eat area size
 			if (snekY >= (y - 1) && snekY <= (y + 25)) {
 				changePosition();

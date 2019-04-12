@@ -34,21 +34,22 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		gfx.fillRect(0, 0, 1400, 800);
 		if (!gameOver) {
 			snek.draw(gfx);
-			gfx.drawString("Score:" + token.getScore(), 15, 30); // draws string points
+			gfx.drawString("Score:" + token.getScore(), 20, 50); // draws string points
 			token.draw(gfx);
-			gfx.setFont(new Font("Times New Roman", Font.PLAIN, 25));// score font and font-size
-			
-			
-		} else {
-			gfx.setColor(Color.red);
-			gfx.drawString("Game Over!", 175, 170);
-			gfx.setFont(new Font("Times New Roman", Font.BOLD, 25));// font and font-size
-			gfx.setColor(Color.green);
-			gfx.drawString("Score: " + token.getScore(), 200, 220);
-			gfx.setFont(new Font("Times New Roman", Font.BOLD, 25));// font and font-size
-		} // else
+			gfx.setFont(new Font(Font.MONOSPACED, Font.ITALIC, 35));// score font and font-size
+		} 
 
+		else {
+			gfx.setColor(Color.red);
+			gfx.setFont(new Font(Font.MONOSPACED, Font.BOLD, 30));// Game Over font and font-size
+			gfx.drawString("Game Over!", 620, 350); // Game Over position
+			gfx.setColor(Color.green);
+			gfx.setFont(new Font(Font.MONOSPACED, Font.ITALIC, 30)); // Final Score font and font-size
+			gfx.drawString("Score: " + token.getScore(), 620, 400); // Final Score and position
+		} // else
+		
 		g.drawImage(img, 0, 0, null); // draws image inside screen
+		
 	}// paint
 
 	public void update(Graphics g) {
@@ -66,11 +67,10 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 				snek.move();
 				this.checkGameOver();
 				token.snekCollision();
-
 			} // if not game over
 			this.repaint();
 			try {
-				Thread.sleep(20);
+				Thread.sleep(15); // snake speed (smaller is faster)
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} // catch
@@ -78,12 +78,15 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	}// run
 
 	public void checkGameOver() {
+
 		if (snek.getX() < 0 || snek.getX() > 1400-20) { // if snek runs to wall in X position
 			gameOver = true;
 		} // if snek runs wall in X position
+
 		if (snek.getY() < 0 || snek.getY() > 800-20) { // if snek runs to wall in Y position
 			gameOver = true;
 		} // if snek runs wall in Y position
+
 		if (snek.snekCollision()) {
 			gameOver = true;
 		} // if
@@ -105,35 +108,36 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 				snek.setXDirection(0); // snek can't go left or right if it is going up or down
 			} // if
 		} // if
+
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			if (snek.getYDirection() != -1) { // if snek is not going down
 				snek.setYDirection(1);
 				snek.setXDirection(0); // snek can't go left or right if it is going up or down
 			} // if
 		} // if
+
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			if (snek.getXDirection() != 1) { // if snek is not going down
 				snek.setXDirection(-1);
 				snek.setYDirection(0); // snek can't go up or down if it is going left or right
-
 			}
 		} // if
+
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			if (snek.getXDirection() != -1) { // if snek is not going down
 				snek.setXDirection(1);
 				snek.setYDirection(0); // snek can't go up or down if it is going left or right
 			} // if
 		} // if
+
 	}
 
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-
 	}
 
 }
