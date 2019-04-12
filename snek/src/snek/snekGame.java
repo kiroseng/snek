@@ -8,8 +8,6 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.JFrame;
-
 public class snekGame extends Applet implements Runnable, KeyListener {
 
 	Graphics gfx;
@@ -29,16 +27,6 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		token = new Token(snek);
 		thread = new Thread(this);
 		thread.start();
-		
-		
-				 
-		 JFrame.setDefaultLookAndFeelDecorated(true);
-		    JFrame frame = new JFrame("Titled Border Example");
-		    frame.setSize(300, 150);
-		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		    
-	
-		
 	}// init
 
 	public void paint(Graphics g) {
@@ -48,17 +36,16 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			snek.draw(gfx);
 			gfx.drawString("Score:" + token.getScore(), 15, 30); // draws string points
 			token.draw(gfx);
-			
+			gfx.setFont(new Font("Times New Roman", Font.PLAIN, 25));// score font and font-size
 			
 			
 		} else {
 			gfx.setColor(Color.red);
 			gfx.drawString("Game Over!", 175, 170);
-			
+			gfx.setFont(new Font("Times New Roman", Font.BOLD, 25));// font and font-size
 			gfx.setColor(Color.green);
 			gfx.drawString("Score: " + token.getScore(), 200, 220);
-			
-			
+			gfx.setFont(new Font("Times New Roman", Font.BOLD, 25));// font and font-size
 		} // else
 
 		g.drawImage(img, 0, 0, null); // draws image inside screen
