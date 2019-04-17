@@ -94,4 +94,9 @@ public class snek {
 	public void setElongate(boolean b) {
 		elongate = b;
 	}
+
+	public int getKeyCode() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }// class

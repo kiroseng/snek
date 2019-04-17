@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+
 public class snekGame extends Applet implements Runnable, KeyListener {
 
 	Graphics gfx;
@@ -16,7 +17,9 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	snek snek;
 	boolean gameOver;
 	Token token;
-
+	
+		
+			
 	public void init() {
 		this.resize(1400, 800);
 		gameOver = false;
@@ -27,8 +30,12 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		token = new Token(snek);
 		thread = new Thread(this);
 		thread.start();
+		String TITLE = "lskflskf";
+			
 	}// init
-
+	
+		
+	
 	public void paint(Graphics g) {
 		gfx.setColor(Color.darkGray);
 		gfx.fillRect(0, 0, 1400, 800);
@@ -51,10 +58,17 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		g.drawImage(img, 0, 0, null); // draws image inside screen
 		
 	}// paint
+	
+	
 
 	public void update(Graphics g) {
 		paint(g);
+		
+				
 	}// update
+	
+	
+	
 
 	public void repaint(Graphics g) {
 		paint(g);
@@ -74,8 +88,20 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} // catch
-		}
+			
+			
+						
+		}	
+					
+		
+			
+		
 	}// run
+	
+	
+	
+			
+	
 
 	public void checkGameOver() {
 
@@ -90,11 +116,14 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		if (snek.snekCollision()) {
 			gameOver = true;
 		} // if
+		
+					
 
 	}// checkGameOver
 
-	public void keyPressed(KeyEvent e) {
-
+			
+		public void keyPressed(KeyEvent e) {
+		
 		if (!snek.isMoving) {
 			if (e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_DOWN
 					|| e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_RIGHT) {
@@ -127,10 +156,14 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			if (snek.getXDirection() != -1) { // if snek is not going down
 				snek.setXDirection(1);
 				snek.setYDirection(0); // snek can't go up or down if it is going left or right
+				
+		
+				
 			} // if
 		} // if
-
-	}
+		
+		}
+	
 
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
