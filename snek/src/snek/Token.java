@@ -31,8 +31,8 @@ public class Token {
 	public boolean snekCollision() { // Checks collision with apple and snake
 		int snekX = snek.getX() + 19;
 		int snekY = snek.getY() + 19;
-		if (snekX >= (x - 1) && snekX <= (x + 25)) // snek eat area size
-			if (snekY >= (y - 1) && snekY <= (y + 25)) {
+		if (snekX >= (x - 1) && snekX <= (x + 30)) // snek eat area size
+			if (snekY >= (y - 1) && snekY <= (y + 30)) {
 				changePosition();
 				score += 10;
 				snek.setElongate(true);
