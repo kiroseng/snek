@@ -7,6 +7,9 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 
 public class snekGame extends Applet implements Runnable, KeyListener {
@@ -17,6 +20,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	snek snek;
 	boolean gameOver;
 	Token token;
+	
 	
 		
 			
@@ -38,7 +42,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	
 	public void paint(Graphics g) {
 		gfx.setColor(Color.darkGray);
-		gfx.fillRect(0, 0, 1400, 800);
+		gfx.fillRect(0, 0, 1400, 800);	
 		if (!gameOver) {
 			snek.draw(gfx);
 			gfx.drawString("Score:" + token.getScore(), 20, 50); // draws string points
@@ -178,6 +182,20 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 	}
+	
+	public void rules() throws FileNotFoundException {
+		final Scanner scanner = new Scanner(new File("snekRules.txt"));
+		String line = " ";
+		
+		while (scanner.hasNext()) {
+			line = scanner.nextLine();
+			System.out.println(line);
+		}
+		
+		scanner.close();
+				
+	} 
+		
 
 }
 
