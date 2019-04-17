@@ -38,13 +38,8 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		gfx.setColor(Color.darkGray);
 		gfx.fillRect(0, 0, 1400, 800);
 
-		if (!snek.isMoving) {
+		if (!snek.isMoving && !gameOver) {
 			printRules();
-			/*
-			 * gfx.setColor(Color.white); gfx.setFont(new Font(Font.MONOSPACED, Font.PLAIN,
-			 * 20));// score font and font-size gfx.drawString("Ohjeet tähän:", 300, 200);
-			 * // draws string points
-			 */
 		} // if snek is not moving show game rules
 
 		if (!gameOver) {
