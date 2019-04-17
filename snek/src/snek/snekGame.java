@@ -129,8 +129,14 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 				snek.setYDirection(0); // snek can't go up or down if it is going left or right
 			} // if
 		} // if
+		
+		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+			if(snek.isMoving)
+				snek.setIsMoving(false);
+			} // if
+		} // if
 
-	}
+	
 
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
