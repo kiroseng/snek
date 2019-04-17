@@ -8,7 +8,6 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class snekGame extends Applet implements Runnable, KeyListener {
@@ -48,7 +47,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			gfx.drawString("Score:" + token.getScore(), 20, 50); // draws string points
 			token.draw(gfx);
 
-		}
+		}// if not game over Game is ON!
 
 		else {
 			gfx.setColor(Color.red);
