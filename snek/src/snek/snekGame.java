@@ -93,15 +93,12 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 						
 		}	
 					
-		
-			
+				
 		
 	}// run
 	
 	
-	
-			
-	
+					
 
 	public void checkGameOver() {
 
@@ -162,17 +159,17 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			} // if
 		} // if
 		
-<<<<<<< HEAD
-		}
-=======
+
+		
+
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 			if(snek.isMoving)
 				snek.setIsMoving(false);
 			} // if
 		} // if
 
->>>>>>> 0811d4b09bbd4eb4c0ec82af7bdd45ba3d27340f
-	
+
+
 
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -183,3 +180,4 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	}
 
 }
+
