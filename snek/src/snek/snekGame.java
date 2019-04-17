@@ -30,7 +30,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		token = new Token(snek);
 		thread = new Thread(this);
 		thread.start();
-		String TITLE = "lskflskf";
+		
 			
 	}// init
 	
@@ -167,7 +167,6 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 				snek.setIsMoving(false);
 			} // if
 		} // if
-
 
 
 
