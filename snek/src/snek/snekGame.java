@@ -3,6 +3,7 @@ package snek;
 import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -30,7 +31,8 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		token = new Token(snek);
 		thread = new Thread(this);
 		thread.start();
-		
+	    Frame title = (Frame)this.getParent().getParent();
+	    title.setTitle("SnekGame");
 			
 	}// init
 	
