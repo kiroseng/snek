@@ -11,13 +11,16 @@ import java.awt.event.KeyListener;
 import java.io.File;
 import java.util.Scanner;
 
+import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
+
 /**
- * The <code>snekGame</code> class implements the game screen and controls, runs the game.
+ * The <code>snekGame</code> class implements the game screen and controls, runs
+ * the game.
  * 
  * @author Essi Varjonen
  * @author Kim Rosengren
  * @author Miikka Wirtanen
- * @author Siiri Ylönen
+ * @author Siiri Ylï¿½nen
  * @author Viljami Ruokonen
  * 
  * @version 1.0
@@ -25,20 +28,20 @@ import java.util.Scanner;
  */
 
 public class snekGame extends Applet implements Runnable, KeyListener {
-	
+
 	Graphics gfx;
 	Image img;
 	Thread thread;
 	snek snek;
 	boolean gameOver;
 	Token token;
-	
-	
+
 	/**
-	 * Defines the initial settings of the game such as windows size and title. It also initializes values for several variables.
+	 * Defines the initial settings of the game such as windows size and title. It
+	 * also initializes values for several variables.
 	 * 
 	 */
-	
+
 	public void init() {
 		this.resize(1400, 800); // defines window size
 		gameOver = false; // defines gameOver variable false
@@ -51,13 +54,14 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		thread.start();
 		Frame title = (Frame) this.getParent().getParent(); // defines window title
 		title.setTitle("SnekGame"); // defines window title
-		
+
 	}// init
-	
+
 	/**
-	 * Implements changes to the screen such as colour, text and the position of the snek and token.
+	 * Implements changes to the screen such as colour, text and the position of the
+	 * snek and token.
 	 * 
-	 *@param g the specified graphics window
+	 * @param g the specified graphics window
 	 */
 
 	public void paint(Graphics g) {
@@ -83,23 +87,24 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			gfx.setColor(Color.green); // defines font-color to green
 			gfx.setFont(new Font(Font.MONOSPACED, Font.ITALIC, 30)); // final Score font and font-size
 			gfx.drawString("Score: " + token.getScore(), 620, 400); // final Score and position
+			printHighScores(); // checks hihgscore and prints top 10 highscores
 		} // else
 
 		g.drawImage(img, 0, 0, null); // draws image inside screen
 
 	}// paint
-	
+
 	/**
 	 * Updates the game screen by starting method <code>paint</code>.
 	 * 
-	 *@param g the specified Graphics window
+	 * @param g the specified Graphics window
 	 */
 
 	public void update(Graphics g) { // method update starts method paint
 		paint(g);
 
 	}// update
-	
+
 	/**
 	 * Updates the game screen by starting method <code>paint</code>
 	 * 
@@ -188,14 +193,14 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) { // if space bar is pressed down
 			if (snek.isMoving) // if snek is moving
 				snek.setIsMoving(false); // this is set to false
-		} // if 
+		} // if
 	} // if space bar is pressed down
 
 	public void keyReleased(KeyEvent e) { // does not do anything yet
 		// TODO Auto-generated method stub
 	}
 
-	public void keyTyped(KeyEvent e) { // does not do anything yet 
+	public void keyTyped(KeyEvent e) { // does not do anything yet
 		// TODO Auto-generated method stub
 	}
 
@@ -216,9 +221,43 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			} // while
 			scanner.close(); // closes file snekRules.txt
 		} catch (Exception e) { // prints out to console error message if scanner can't find right file
-			System.out.println("Couldn't open file."); 
-		}
+			System.out.println("Couldn't open file.");
+		} // catch
+	} // printRules
 
-	}
+	public void printHighScores() {
+		int[] highScores = new int[10];
+		int i = 0;
+		int linePositionX = 200; // print position X
+		int linePositionY = 700;// print position Y
+
+		try {
+			final Scanner scanner = new Scanner(new File("score.txt")); // opens snekRules.txt files
+			while (scanner.hasNextInt()) { // while snekRules.txt file has next line scanner reads it in
+				highScores[i] = scanner.nextInt();
+				i++;
+			} // while
+			scanner.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		} // catch
+		gfx.setColor(Color.white); // sets text color to white
+		gfx.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));// score font and font-size
+		gfx.drawString("High Scores: ", linePositionX, linePositionY - 30); // draws string what is inside
+		int score = 0;
+		for (int loop1 = 0; loop1 < 5; loop1++) {
+			linePositionY = 700;
+			for (int j = 0; j < 2; j++) {
+				gfx.setColor(Color.white); // sets text color to white
+				gfx.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 15));// score font and font-size
+				gfx.drawString((score + 1) + ". " + highScores[score], linePositionX, linePositionY); // draws string what is
+																								// inside
+																								// the line variable
+				linePositionY += 20; // adds +50 to linePositionY, so next line comes under previous line
+				score++;
+			} // for
+			linePositionX += 150;
+		} // for loop1
+	} // printHighScores
 
 }
