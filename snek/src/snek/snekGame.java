@@ -9,6 +9,8 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
@@ -243,16 +245,15 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			System.out.println(e);
 		} // catch
 
-		highScores[10]=token.getScore();
-		for(int scores = 10; scores >0; scores--) {
-			if(highScores[scores]>highScores[scores-1]) {
+		// sorts high scores to new order
+		highScores[10] = token.getScore();
+		for (int scores = 10; scores > 0; scores--) {
+			if (highScores[scores] > highScores[scores - 1]) {
 				int tmp = highScores[scores];
-				highScores[scores] = highScores[scores-1];
-				highScores[scores-1] = tmp;
-			}//if
-		}//for
-			
-
+				highScores[scores] = highScores[scores - 1];
+				highScores[scores - 1] = tmp;
+			} // if
+		} // for
 
 		// prints out the highs scores
 		gfx.setColor(Color.white); // sets text color to white
@@ -273,6 +274,20 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			} // for
 			linePositionX += 150;
 		} // for loop1
+
+		// writer
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter("score.txt");
+		
+		for(int write = 0; write<10; write++) {
+			writer.println(highScores[write]);
+		}//for
+		writer.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} //catch
 	} // printHighScores
 
 }
