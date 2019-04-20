@@ -15,30 +15,30 @@ package snek;
 
 public class Point {
 	private int x, y;
-	
-	public Point() {
+
+	public Point() { // Constructor Point
 		x = 0;
 		y = 0;
-	}//Point
-	
-	public Point(int x, int y) {
+	}// Point 
+
+	public Point(int x, int y) { // Constructor witch you can give attribkuts int x and int y
 		this.x = x;
 		this.y = y;
-	}//Point
-	
-	public void setX(int x) {
+	}// Point 
+
+	public void setX(int x) { // this method sets snek X cordinate to variable x that are given to it
 		this.x = x;
-	}//setX
-	
-	public void setY(int y) {
+	}// setX
+
+	public void setY(int y) { // this method sets snek Y cordinate to variable y that are given to it
 		this.y = y;
-	}//setY
-	
-	public int getX() {
+	}// setY
+
+	public int getX() { // this method returns snek X cordinate
 		return x;
-	}//getX
-	
-	public int getY() {
+	}// getX
+
+	public int getY() { // this method returns snek Y cordinate
 		return y;
-	}//getY
-}//Point
+	}// getY
+}// Point
