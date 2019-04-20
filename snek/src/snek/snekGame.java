@@ -25,14 +25,20 @@ import java.util.Scanner;
  */
 
 public class snekGame extends Applet implements Runnable, KeyListener {
-
+	
 	Graphics gfx;
 	Image img;
 	Thread thread;
 	snek snek;
 	boolean gameOver;
 	Token token;
-
+	
+	
+	/**
+	 * Defines the initial settings of the game such as windows size and title. It also initializes values for several variables.
+	 * 
+	 */
+	
 	public void init() {
 		this.resize(1400, 800); // defines window size
 		gameOver = false; // defines gameOver variable false
@@ -45,8 +51,14 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		thread.start();
 		Frame title = (Frame) this.getParent().getParent(); // defines window title
 		title.setTitle("SnekGame"); // defines window title
-
+		
 	}// init
+	
+	/**
+	 * Implements changes to the screen such as colour, text and the position of the snek and token.
+	 * 
+	 *@param g the specified graphics window
+	 */
 
 	public void paint(Graphics g) {
 		gfx.setColor(Color.darkGray); // defines window bgcolor to darkgray
@@ -76,11 +88,23 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		g.drawImage(img, 0, 0, null); // draws image inside screen
 
 	}// paint
+	
+	/**
+	 * Updates the game screen by starting method <code>paint</code>.
+	 * 
+	 *@param g the specified Graphics window
+	 */
 
 	public void update(Graphics g) { // method update starts method paint
 		paint(g);
 
 	}// update
+	
+	/**
+	 * Updates the game screen by starting method <code>paint</code>
+	 * 
+	 * @param g the specified Graphics window
+	 */
 
 	public void repaint(Graphics g) { // method repaint starts method paint
 		paint(g);
