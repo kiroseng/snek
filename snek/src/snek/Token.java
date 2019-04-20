@@ -9,7 +9,7 @@ import java.awt.Graphics;
  * @author Essi Varjonen
  * @author Kim Rosengren
  * @author Miikka Wirtanen
- * @author Siiri Ylönen
+ * @author Siiri Ylï¿½nen
  * @author Viljami Ruokonen
  * 
  * @version 1.0
@@ -18,40 +18,40 @@ import java.awt.Graphics;
 
 public class Token {
 
-	private int x, y, score;
+	private int x, y, score; //defines variables x,y score
 	private snek snek;
 
-	public Token(snek s) {
-		x = (int) (Math.random() * 1400);
-		y = (int) (Math.random() * 800);
-		snek = s;
+	public Token(snek s) { // constructor Token
+		x = (int) (Math.random() * 1400); // randomized value from 0 - 1400
+		y = (int) (Math.random() * 800); // randomized value from 0 - 800
+		snek = s; //sets snek value to s
 	}// token
 
-	public void changePosition() {
+	public void changePosition() { //method changes the apple position after apple gets eated
 		x = (int) (Math.random() * 1380);
 		y = (int) (Math.random() * 780);
 	}// changePosition
 
-	public int getScore() {
+	public int getScore() { // method returns score
 		return score;
 	}// getScore
 
-	public void draw(Graphics g) {
-		g.setColor(Color.red); // apple color
-		g.fillRect(x, y, 20, 20);
+	public void draw(Graphics g) { // method draws apple to the screen
+		g.setColor(Color.red); // sets apple color to red
+		g.fillRect(x, y, 20, 20); //fills rectangle 20x20, to place in x, y position
 	}// draw
 
 	public boolean snekCollision() { // Checks collision with apple and snake
-		int snekX = snek.getX() + 19;
-		int snekY = snek.getY() + 19;
-		if (snekX >= (x - 1) && snekX <= (x + 30)) // snek eat area size
-			if (snekY >= (y - 1) && snekY <= (y + 30)) {
-				changePosition();
-				score += 10;
-				snek.setElongate(true);
-				return true;
+		int snekX = snek.getX() + 19; // snek head position in X
+		int snekY = snek.getY() + 19; // snek head position in Y
+		if (snekX >= (x - 1) && snekX <= (x + 30)) // snek eat area size. If snek head is between these values 
+			if (snekY >= (y - 1) && snekY <= (y + 30)) { // and these values, apple gets eated
+				changePosition(); // changes apple position
+				score += 10; // adds +10 score
+				snek.setElongate(true); // sets elongate to true, and snek grows 
+				return true; // returns true if apple is eated
 			} // if
-		return false;
+		return false; // otherwise returns false
 	}// snekCollision
 
 }
