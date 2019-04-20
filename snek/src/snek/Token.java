@@ -3,6 +3,19 @@ package snek;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * The <code>Token</code> class implements the token player must acquire to score points.
+ * 
+ * @author Essi Varjonen
+ * @author Kim Rosengren
+ * @author Miikka Wirtanen
+ * @author Siiri Ylönen
+ * @author Viljami Ruokonen
+ * 
+ * @version 1.0
+ *
+ */
+
 public class Token {
 
 	private int x, y, score;

@@ -11,6 +11,19 @@ import java.awt.event.KeyListener;
 import java.io.File;
 import java.util.Scanner;
 
+/**
+ * The <code>snekGame</code> class implements the game screen and controls, runs the game.
+ * 
+ * @author Essi Varjonen
+ * @author Kim Rosengren
+ * @author Miikka Wirtanen
+ * @author Siiri Ylönen
+ * @author Viljami Ruokonen
+ * 
+ * @version 1.0
+ *
+ */
+
 public class snekGame extends Applet implements Runnable, KeyListener {
 
 	Graphics gfx;

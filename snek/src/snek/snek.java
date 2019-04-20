@@ -5,6 +5,19 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  The <code>snek</code> class implements the movable character that player controls.
+ * 
+ * @author Essi Varjonen
+ * @author Kim Rosengren
+ * @author Miikka Wirtanen
+ * @author Siiri Ylönen
+ * @author Viljami Ruokonen
+ * 
+ * @version 1.0
+ *
+ */
+
 public class snek {
 	List<Point> snekPoints;
 	int xDirection, yDirection;

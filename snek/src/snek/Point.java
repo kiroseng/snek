@@ -1,5 +1,18 @@
 package snek;
 
+/**
+ * The <code>Point</code> class implements the coordination system for the game.
+ * 
+ * @author Essi Varjonen
+ * @author Kim Rosengren
+ * @author Miikka Wirtanen
+ * @author Siiri Ylönen
+ * @author Viljami Ruokonen
+ * 
+ * @version 1.0
+ *
+ */
+
 public class Point {
 	private int x, y;
 	
