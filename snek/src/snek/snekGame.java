@@ -226,11 +226,12 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	} // printRules
 
 	public void printHighScores() {
-		int[] highScores = new int[10];
+		int[] highScores = new int[11];
 		int i = 0;
 		int linePositionX = 200; // print position X
 		int linePositionY = 700;// print position Y
 
+		// reads highscores from file score.txt
 		try {
 			final Scanner scanner = new Scanner(new File("score.txt")); // opens snekRules.txt files
 			while (scanner.hasNextInt()) { // while snekRules.txt file has next line scanner reads it in
@@ -241,6 +242,19 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		} catch (Exception e) {
 			System.out.println(e);
 		} // catch
+
+		highScores[10]=token.getScore();
+		for(int scores = 10; scores >0; scores--) {
+			if(highScores[scores]>highScores[scores-1]) {
+				int tmp = highScores[scores];
+				highScores[scores] = highScores[scores-1];
+				highScores[scores-1] = tmp;
+			}//if
+		}//for
+			
+
+
+		// prints out the highs scores
 		gfx.setColor(Color.white); // sets text color to white
 		gfx.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));// score font and font-size
 		gfx.drawString("High Scores: ", linePositionX, linePositionY - 30); // draws string what is inside
@@ -250,9 +264,10 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			for (int j = 0; j < 2; j++) {
 				gfx.setColor(Color.white); // sets text color to white
 				gfx.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 15));// score font and font-size
-				gfx.drawString((score + 1) + ". " + highScores[score], linePositionX, linePositionY); // draws string what is
-																								// inside
-																								// the line variable
+				gfx.drawString((score + 1) + ". " + highScores[score], linePositionX, linePositionY); // draws string
+																										// what is
+				// inside
+				// the line variable
 				linePositionY += 20; // adds +50 to linePositionY, so next line comes under previous line
 				score++;
 			} // for
