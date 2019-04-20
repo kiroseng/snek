@@ -247,14 +247,15 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 
 		// sorts high scores to new order
 		highScores[10] = token.getScore();
-		for(int scores = 0; scores<highScores.length; scores++)
-			for(int scores2 = 1; scores2<highScores.length; scores2++) {
-				if(highScores[scores]<highScores[scores2]) {
-					int tmp = highScores[scores];
-					highScores[scores] = highScores[scores2];
-					highScores[scores2] = tmp;
-				}//if
-			}//for
+		for (int h = 0; h < highScores.length; h++)
+			for (int s = 0; s < highScores.length - 1; s++) {
+				int tmp;
+				if (highScores[s] < highScores[s + 1]) {
+					tmp = highScores[s];
+					highScores[s] = highScores[s + 1];
+					highScores[s + 1] = tmp;
+				} // if
+			} // for
 
 		// prints out the highs scores
 		gfx.setColor(Color.white); // sets text color to white
@@ -280,15 +281,15 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter("score.txt");
-		
-		for(int write = 0; write<10; write++) {
-			writer.println(highScores[write]);
-		}//for
-		writer.close();
+
+			for (int write = 0; write < 10; write++) {
+				writer.println(highScores[write]);
+			} // for
+			writer.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} //catch
+		} // catch
 	} // printHighScores
 
 }
