@@ -247,13 +247,14 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 
 		// sorts high scores to new order
 		highScores[10] = token.getScore();
-		for (int scores = 10; scores > 0; scores--) {
-			if (highScores[scores] > highScores[scores - 1]) {
-				int tmp = highScores[scores];
-				highScores[scores] = highScores[scores - 1];
-				highScores[scores - 1] = tmp;
-			} // if
-		} // for
+		for(int scores = 0; scores<highScores.length; scores++)
+			for(int scores2 = 1; scores2<highScores.length; scores2++) {
+				if(highScores[scores]<highScores[scores2]) {
+					int tmp = highScores[scores];
+					highScores[scores] = highScores[scores2];
+					highScores[scores2] = tmp;
+				}//if
+			}//for
 
 		// prints out the highs scores
 		gfx.setColor(Color.white); // sets text color to white
