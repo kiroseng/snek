@@ -116,11 +116,6 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	public void repaint(Graphics g) { // method repaint starts method paint
 		paint(g);
 	}// repaint
-	
-	/**
-	 * Runs the program by looping methods to move the snek and check conditions for collision and game over.
-	 * 
-	 */
 
 	public void run() { // starts runnable program
 		for (;;) { // never-ending loop
@@ -140,11 +135,6 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		}
 
 	}// run
-	
-	/**
-	 * Checks whether the conditions for game over are met.
-	 * 
-	 */
 
 	public void checkGameOver() { // this method checks if snek makes collision with wall, and sets boolean
 									// gameOver to true if it happens
@@ -163,13 +153,6 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		} // if
 
 	}// checkGameOver
-	
-	/**
-	 * Binds the movement of the snek to keys <i>up, down, left</i> and <i>right</i> and pause to <i>space.</i>
-	 * 
-	 * @param e indicates that a keystroke occurred in a component. 
-	 * 
-	 */
 
 	public void keyPressed(KeyEvent e) { // method that listens if keys up, down, left, right or spacebar is pressed
 
@@ -214,31 +197,14 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 				snek.setIsMoving(false); // this is set to false
 		} // if
 	} // if space bar is pressed down
-	
-	/** 
-	 * Invoked when a key has been released.
-	 * 
-	 * @param e indicates that a keystroke occurred in a component.
-	 */
 
 	public void keyReleased(KeyEvent e) { // does not do anything yet
 		// TODO Auto-generated method stub
 	}
-	
-	/** 
-	 * Invoked when a key has been typed.
-	 * 
-	 * @param e indicates that a keystroke occurred in a component.
-	 */
 
 	public void keyTyped(KeyEvent e) { // does not do anything yet
 		// TODO Auto-generated method stub
 	}
-	
-	/**
-	 * Prints rules of the game to the screen at the beginning of the game and while the game is paused.
-	 * 
-	 */
 
 	public void printRules() { // prints out the rules to the screen from file: snekRules.txt
 
@@ -261,12 +227,6 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		} // catch
 	} // printRules
 
-	/**
-	 * 
-	 * Prints the high scores to the game screen after game over.
-	 * 
-	 */
-	
 	public void printHighScores() {
 		int[] highScores = new int[11];
 		int i = 0;
