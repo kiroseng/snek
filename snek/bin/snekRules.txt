@@ -1,0 +1,6 @@
+Snek Rules and Instructions
+
+- Turn the snake with left, right, up and down cursor keys.
+- Press Space to pause the game.
+- Don't run the snake into the borders or itself or you will die.
+- Eat the fruits to gain points and grow your snake.
