@@ -116,9 +116,10 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	public void repaint(Graphics g) { // method repaint starts method paint
 		paint(g);
 	}// repaint
-	
+
 	/**
-	 * Runs the program by looping methods to move the snek and check conditions for collision and game over.
+	 * Runs the program by looping methods to move the snek and check conditions for
+	 * collision and game over.
 	 * 
 	 */
 
@@ -140,7 +141,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		}
 
 	}// run
-	
+
 	/**
 	 * Checks whether the conditions for game over are met.
 	 * 
@@ -163,11 +164,12 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		} // if
 
 	}// checkGameOver
-	
+
 	/**
-	 * Binds the movement of the snek to keys <i>up, down, left</i> and <i>right</i> and pause to <i>space.</i>
+	 * Binds the movement of the snek to keys <i>up, down, left</i> and <i>right</i>
+	 * and pause to <i>space.</i>
 	 * 
-	 * @param e indicates that a keystroke occurred in a component. 
+	 * @param e indicates that a keystroke occurred in a component.
 	 * 
 	 */
 
@@ -214,8 +216,8 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 				snek.setIsMoving(false); // this is set to false
 		} // if
 	} // if space bar is pressed down
-	
-	/** 
+
+	/**
 	 * Invoked when a key has been released.
 	 * 
 	 * @param e indicates that a keystroke occurred in a component.
@@ -224,8 +226,8 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	public void keyReleased(KeyEvent e) { // does not do anything yet
 		// TODO Auto-generated method stub
 	}
-	
-	/** 
+
+	/**
 	 * Invoked when a key has been typed.
 	 * 
 	 * @param e indicates that a keystroke occurred in a component.
@@ -234,9 +236,10 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	public void keyTyped(KeyEvent e) { // does not do anything yet
 		// TODO Auto-generated method stub
 	}
-	
+
 	/**
-	 * Prints rules of the game to the screen at the beginning of the game and while the game is paused.
+	 * Prints rules of the game to the screen at the beginning of the game and while
+	 * the game is paused.
 	 * 
 	 */
 
@@ -266,65 +269,37 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	 * Prints the high scores to the game screen after game over.
 	 * 
 	 */
-	
+
 	public void printHighScores() {
-		int[] highScores = new int[11];
-		int i = 0;
+		int[] highScores = new int[2];
 		int linePositionX = 200; // print position X
 		int linePositionY = 700;// print position Y
 
 		// reads highscores from file score.txt
 		try {
 			final Scanner scanner = new Scanner(new File("score.txt")); // opens snekRules.txt files
-			while (scanner.hasNextInt()) { // while snekRules.txt file has next line scanner reads it in
-				highScores[i] = scanner.nextInt();
-				i++;
-			} // while
+			highScores[0] = scanner.nextInt();
 			scanner.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		} // catch
 
 		// sorts high scores to new order
-		highScores[10] = token.getScore();
-		for (int h = 0; h < highScores.length; h++)
-			for (int s = 0; s < highScores.length - 1; s++) {
-				int tmp;
-				if (highScores[s] < highScores[s + 1]) {
-					tmp = highScores[s];
-					highScores[s] = highScores[s + 1];
-					highScores[s + 1] = tmp;
-				} // if
-			} // for
+		highScores[1] = token.getScore();
+		if (highScores[1] > highScores[0])
+			highScores[0] = highScores[1];
 
 		// prints out the highs scores
 		gfx.setColor(Color.white); // sets text color to white
 		gfx.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));// score font and font-size
-		gfx.drawString("High Scores: ", linePositionX, linePositionY - 30); // draws string what is inside
-		int score = 0;
-		for (int loop1 = 0; loop1 < 5; loop1++) {
-			linePositionY = 700;
-			for (int j = 0; j < 2; j++) {
-				gfx.setColor(Color.white); // sets text color to white
-				gfx.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 15));// score font and font-size
-				gfx.drawString((score + 1) + ". " + highScores[score], linePositionX, linePositionY); // draws string
-																										// what is
-				// inside
-				// the line variable
-				linePositionY += 20; // adds +50 to linePositionY, so next line comes under previous line
-				score++;
-			} // for
-			linePositionX += 150;
-		} // for loop1
+		gfx.drawString("High Score: " + highScores[0], linePositionX, linePositionY - 30); // draws string what is
+																							// inside
 
 		// writer
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter("score.txt");
-
-			for (int write = 0; write < 10; write++) {
-				writer.println(highScores[write]);
-			} // for
+			writer.println(highScores[0]);
 			writer.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
