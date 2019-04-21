@@ -25,6 +25,11 @@ public class snek {
 	boolean isMoving, elongate; // defines boolean variables isMoving and elongate
 	final int STARTSIZE = 80, STARTX = 200, STARTY = 200; // snek length and starting point
 
+	/**
+	 * This constructor creates the movable snek character.
+	 * 
+	 */
+	
 	public snek() {
 		snekPoints = new ArrayList<Point>(); // makes new arraylist
 		xDirection = 0; // sets xDirection to 0
@@ -36,6 +41,12 @@ public class snek {
 			snekPoints.add(new Point(STARTX - i * 4, STARTY));
 		} // for
 	}// Snek
+	
+	/**
+	 * Draws the snek to the screen.
+	 * 
+	 * @param g the specified Graphics window.
+	 */
 
 	public void draw(Graphics g) { // this method draws snek to the screen
 		g.setColor(Color.green); // sets snek color to green
@@ -44,6 +55,11 @@ public class snek {
 			g.fillRect(p.getX(), p.getY(), 20, 20); // with 20x20 green rectangle
 		} // for
 	}// draw
+	
+	/**
+	 * Moves the snek in the game screen if conditions are met.
+	 * 
+	 */
 
 	public void move() { // this method moves snek inside screen if snek is moving
 		if (isMoving) { // if snek is movin move snek
@@ -64,6 +80,12 @@ public class snek {
 			} // if elongate
 		} // if isMoving
 	}// move
+	
+	/**
+	 * Checks if the snek collides with itself.
+	 * 
+	 * @return boolean true or false depending on whether the conditions for collision are met.
+	 */
 
 	public boolean snekCollision() { // method that checks if snek has a collision with itself
 		int x = this.getX();
@@ -75,30 +97,72 @@ public class snek {
 		} // for
 		return false; // and if there is no collision method returns false
 	}// snekCollision
+	
+	/**
+	 * Returns variable to check if snek is moving.
+	 * 
+	 * @return isMoving boolean variable to check whether the snek is moving or not.
+	 */
 
 	public boolean isMoving() { // method that returns boolean value is snek moving
 		return isMoving;
 	}// isMoving
+	
+	/**
+	 * Sets value to variable that checks if snek is moving.
+	 * 
+	 * @param b boolean variable that sets the value of snek movement.
+	 */
 
 	public void setIsMoving(boolean b) { // method that sets boolean variable is snek moving
 		isMoving = b;
 	}
+	
+	/**
+	 * Returns variable to get snek direction in x axis.
+	 * 
+	 * @return xDirextion to get snek direction in x axis.
+	 */
 
 	public int getXDirection() { // method that returns snek xDirection
 		return xDirection;
 	}// getXDirection
+	
+	/**
+	 * Returns variable to get snek direction in y axis.
+	 * 
+	 * @return yDirection to get snek direction in y axis.
+	 */
 
 	public int getYDirection() { // method that returns snek yDirection
 		return yDirection;
 	}// getYDirection
+	
+	/**
+	 * Sets value to snek direction in x axis.
+	 * 
+	 * @param x sets value for snek direction.
+	 */
 
 	public void setXDirection(int x) { // method that sets snek xDirection
 		xDirection = x;
 	}// setXDirection
+	
+	/**
+	 * Sets value to snek direction in y axis.
+	 * 
+	 * @param y sets value for snek direction.
+	 */
 
 	public void setYDirection(int y) { // method that sets snek yDirection
 		yDirection = y;
 	}// setYDirection
+	
+	/**
+	 * Returns the position of the snek in x axis.
+	 * 
+	 * @return list snekPoints to get the position of the snek.
+	 */
 
 	public int getX() { // method that returns sneks X position
 		return snekPoints.get(0).getX();
