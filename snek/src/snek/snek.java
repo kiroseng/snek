@@ -139,7 +139,7 @@ public class snek {
 	}// getYDirection
 	
 	/**
-	 * Sets value to snek direction in x axis.
+	 * Sets value for snek direction in x axis.
 	 * 
 	 * @param x sets value for snek direction.
 	 */
@@ -149,7 +149,7 @@ public class snek {
 	}// setXDirection
 	
 	/**
-	 * Sets value to snek direction in y axis.
+	 * Sets value for snek direction in y axis.
 	 * 
 	 * @param y sets value for snek direction.
 	 */
