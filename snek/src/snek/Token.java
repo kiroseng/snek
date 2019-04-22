@@ -32,18 +32,14 @@ public class Token {
 		y = (int) (Math.random() * 780); // randomized value from 0 - 800
 		snek = s; //sets snek value to s
 	}// token
-<<<<<<< HEAD
+
 	
 	/**
 	 * Changes the apple location to random position after colliding with snek.
 	 * 
 	 */
 	
-	public void changePosition() { //method changes the apple position after apple gets eated
-=======
-
 	public void changePosition() { //method changes the apple position after apple gets eaten
->>>>>>> 918e2d909a5129688ad4b4e854e34b3e798a60f4
 		x = (int) (Math.random() * 1380);
 		y = (int) (Math.random() * 780);
 	}// changePosition
