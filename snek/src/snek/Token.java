@@ -22,12 +22,12 @@ public class Token {
 	private snek snek;
 
 	public Token(snek s) { // constructor Token
-		x = (int) (Math.random() * 1400); // randomized value from 0 - 1400
-		y = (int) (Math.random() * 800); // randomized value from 0 - 800
+		x = (int) (Math.random() * 1380); // randomized value from 0 - 1400
+		y = (int) (Math.random() * 780); // randomized value from 0 - 800
 		snek = s; //sets snek value to s
 	}// token
 
-	public void changePosition() { //method changes the apple position after apple gets eated
+	public void changePosition() { //method changes the apple position after apple gets eaten
 		x = (int) (Math.random() * 1380);
 		y = (int) (Math.random() * 780);
 	}// changePosition
