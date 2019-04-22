@@ -12,7 +12,7 @@ import java.util.List;
  * @author Essi Varjonen
  * @author Kim Rosengren
  * @author Miikka Wirtanen
- * @author Siiri Ylï¿½nen
+ * @author Siiri Ylönen
  * @author Viljami Ruokonen
  * 
  * @version 1.0
@@ -84,7 +84,7 @@ public class snek {
 	/**
 	 * Checks if the snek collides with itself.
 	 * 
-	 * @return boolean true or false depending on whether the conditions for collision are met.
+	 * @return boolean value to check if the conditions for collision are met.
 	 */
 
 	public boolean snekCollision() { // method that checks if snek has a collision with itself
@@ -161,20 +161,38 @@ public class snek {
 	/**
 	 * Returns the position of the snek in x axis.
 	 * 
-	 * @return list snekPoints to get the position of the snek.
+	 * @return snekPoints to get the position of the snek.
 	 */
 
 	public int getX() { // method that returns sneks X position
 		return snekPoints.get(0).getX();
 	}// getX
+	
+	/**
+	 * Returns the position of the snek in y axis.
+	 * 
+	 * @return snekPoints to get the position of the snek.
+	 */
 
 	public int getY() { // method that returns sneks Y position
 		return snekPoints.get(0).getY();
 	}// getY
+	
+	/**
+	 * Sets boolean value to variable controlling snek growth.
+	 * 
+	 * @param b sets boolean value for snek growth.
+	 */
 
 	public void setElongate(boolean b) { // method that sets boolean value to variable elongate
 		elongate = b;
 	}
+	
+	/**
+	 * Method that returns the events keyCode. Auto-generated method stub.
+	 * 
+	 * @return virtual key code.
+	 */
 
 	public int getKeyCode() {
 		// TODO Auto-generated method stub

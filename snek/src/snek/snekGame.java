@@ -218,7 +218,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	} // if space bar is pressed down
 
 	/**
-	 * Invoked when a key has been released.
+	 * Invoked when a key has been released. Auto-generated method stub, not in use currently.
 	 * 
 	 * @param e indicates that a keystroke occurred in a component.
 	 */
@@ -228,7 +228,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	}
 
 	/**
-	 * Invoked when a key has been typed.
+	 * Invoked when a key has been typed. Auto-generated method stub, not in use currently.
 	 * 
 	 * @param e indicates that a keystroke occurred in a component.
 	 */
