@@ -90,7 +90,10 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			gfx.setColor(Color.green); // defines font-color to green
 			gfx.setFont(new Font(Font.MONOSPACED, Font.ITALIC, 30)); // final Score font and font-size
 			gfx.drawString("Score: " + token.getScore(), 620, 400); // final Score and position
-			printHighScores(); // checks hihgscore and prints top 10 highscores
+			gfx.setColor(Color.green); // sets text color to white
+			gfx.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));// score font and font-size
+			gfx.drawString("Press Enter for a new game", 620, 450); // instructions to start a new game
+			printHighScores(); // checks highscore and prints top 10 highscores
 		} // else
 
 		g.drawImage(img, 0, 0, null); // draws image inside screen
@@ -215,8 +218,13 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) { // if space bar is pressed down
 			if (snek.isMoving) // if snek is moving
 				snek.setIsMoving(false); // this is set to false
-		} // if
-	} // if space bar is pressed down
+		} // if space bar is pressed down
+		
+		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+			if(gameOver) // if game over
+				init();
+		} //if enter is pressed down
+	} // Key Event
 
 	/**
 	 * Invoked when a key has been released. Auto-generated method stub, not in use currently.
