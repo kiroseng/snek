@@ -13,8 +13,6 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
-
 /**
  * The <code>snekGame</code> class implements the game screen and controls, runs
  * the game.
@@ -31,6 +29,10 @@ import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
 public class snekGame extends Applet implements Runnable, KeyListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L; // fixed warning "The serializable class snekGame does not declare a static final serialVersionUID field of type long"
 	Graphics gfx;
 	Image img;
 	Thread thread;
