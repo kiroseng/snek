@@ -13,8 +13,6 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
-
 /**
  * The <code>snekGame</code> class implements the game screen and controls, runs
  * the game.
@@ -31,6 +29,10 @@ import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
 public class snekGame extends Applet implements Runnable, KeyListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L; // fixed warning "The serializable class snekGame does not declare a static final serialVersionUID field of type long"
 	Graphics gfx;
 	Image img;
 	Thread thread;
@@ -39,8 +41,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	Token token;
 
 	/**
-	 * Defines the initial settings of the game such as windows size and title. It
-	 * also initializes values for several variables.
+	 * Defines the initial settings of the game such as objects, variables and windows size and title.
 	 * 
 	 */
 
@@ -60,10 +61,10 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	}// init
 
 	/**
-	 * Implements changes to the screen such as colour, text and the position of the
-	 * snek and token.
+	 * Implements changes such as colour, text and the position of the
+	 * snek and token to the screen.
 	 * 
-	 * @param g the specified graphics window
+	 * @param g the specified graphics window.
 	 */
 
 	public void paint(Graphics g) {
@@ -99,7 +100,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	/**
 	 * Updates the game screen by starting method <code>paint</code>.
 	 * 
-	 * @param g the specified Graphics window
+	 * @param g the specified graphics window.
 	 */
 
 	public void update(Graphics g) { // method update starts method paint
@@ -110,7 +111,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	/**
 	 * Updates the game screen by starting method <code>paint</code>
 	 * 
-	 * @param g the specified Graphics window
+	 * @param g the specified graphics window.
 	 */
 
 	public void repaint(Graphics g) { // method repaint starts method paint
@@ -266,7 +267,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 
 	/**
 	 * 
-	 * Prints the high scores to the game screen after game over.
+	 * Prints the high score to the game screen after game over.
 	 * 
 	 */
 

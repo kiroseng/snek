@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * The <code>Token</code> class implements the token player must acquire to score points.
+ * The <code>Token</code> class implements the token "apple" player must acquire to score points.
  * 
  * @author Essi Varjonen
  * @author Kim Rosengren
@@ -21,25 +21,59 @@ public class Token {
 	private int x, y, score; //defines variables x,y score
 	private snek snek;
 
+	/**
+	 * This constructor creates the apple in a random location on the game screen.
+	 * 
+	 * @param s sets the snek value.
+	 */
+	
 	public Token(snek s) { // constructor Token
-		x = (int) (Math.random() * 1400); // randomized value from 0 - 1400
-		y = (int) (Math.random() * 800); // randomized value from 0 - 800
+		x = (int) (Math.random() * 1380); // randomized value from 0 - 1400
+		y = (int) (Math.random() * 780); // randomized value from 0 - 800
 		snek = s; //sets snek value to s
 	}// token
-
+<<<<<<< HEAD
+	
+	/**
+	 * Changes the apple location to random position after colliding with snek.
+	 * 
+	 */
+	
 	public void changePosition() { //method changes the apple position after apple gets eated
+=======
+
+	public void changePosition() { //method changes the apple position after apple gets eaten
+>>>>>>> 918e2d909a5129688ad4b4e854e34b3e798a60f4
 		x = (int) (Math.random() * 1380);
 		y = (int) (Math.random() * 780);
 	}// changePosition
 
+	/**
+	 * Returns game score.
+	 *  
+	 * @return score
+	 */
+	
 	public int getScore() { // method returns score
 		return score;
 	}// getScore
 
+	/**
+	 * Draws apple to the screen.
+	 * 
+	 * @param g the specified graphics window.
+	 */
+	
 	public void draw(Graphics g) { // method draws apple to the screen
 		g.setColor(Color.red); // sets apple color to red
 		g.fillRect(x, y, 20, 20); //fills rectangle 20x20, to place in x, y position
 	}// draw
+	
+	/**
+	 * Checks the collision of snek and the apple.
+	 * 
+	 * @return boolean value to determine if collision happened.
+	 */
 
 	public boolean snekCollision() { // Checks collision with apple and snake
 		int snekX = snek.getX() + 19; // snek head position in X
