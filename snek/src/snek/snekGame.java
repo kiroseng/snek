@@ -230,7 +230,11 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 
 		if(gameOver) { //if game over
             if(e.getKeyCode() == KeyEvent.VK_ENTER){ // when enter is pressed 
+            	try {
                 reload(); // calls for a reload module
+            	} catch (Exception e1) {
+					// TODO: handle exception
+				}
             } //if
 		} //if enter is pressed down
 	} // Key Event
