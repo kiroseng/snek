@@ -138,7 +138,8 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			this.repaint(); // repaint image inside the screen
 			try { // thread.sleep must be inside try and catch, because it can cause an error
 				Thread.sleep(15); // snake speed (smaller is faster)
-			} catch (InterruptedException e) { // this catches the error if it occurs
+			}
+			catch (InterruptedException e) { // this catches the error if it occurs
 				e.printStackTrace();
 			} // catch
 
@@ -177,6 +178,13 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	 * 
 	 */
 
+	@SuppressWarnings("deprecation")
+	public void reload() { // module which reloads the game
+        this.destroy(); // clears any older information	
+        this.init(); // starts the init again
+        thread.stop(); // without this the snake speeds up after restart because of a thread delay issue, it is deprecated method
+	}	// reload
+	
 	public void keyPressed(KeyEvent e) { // method that listens if keys up, down, left, right or spacebar is pressed
 
 		if (!snek.isMoving) { // if not snek is moving it starts to move when pressed up, down left or right
@@ -220,9 +228,10 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 				snek.setIsMoving(false); // this is set to false
 		} // if space bar is pressed down
 
-		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-			if(gameOver) // if game over
-				init();
+		if(gameOver) { //if game over
+            if(e.getKeyCode() == KeyEvent.VK_ENTER){ // when enter is pressed 
+                reload(); // calls for a reload module
+            } //if
 		} //if enter is pressed down
 	} // Key Event
 
