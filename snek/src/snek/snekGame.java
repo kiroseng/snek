@@ -51,7 +51,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		img = createImage(1400, 800); // defines image size to match window size
 		gfx = img.getGraphics();
 		this.addKeyListener(this); // adds key listener
-		snek = new snek(); // defines snek.java to snek, that it can be used inside this snekGame.java
+		snek = new snek(); // defines snek.java to snek, so it can be used inside this snekGame.java
 		token = new Token(snek); // defines token.java to token, that it can be used inside this snekGame.java
 		thread = new Thread(this);
 		thread.start();
@@ -152,7 +152,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	 */
 
 	public void checkGameOver() { // this method checks if snek makes collision with wall, and sets boolean
-									// gameOver to true if it happens
+		// gameOver to true if it happens
 
 		if (snek.getX() < 0 || snek.getX() > 1400 - 20) { // if snek runs to wall in X position
 			gameOver = true;
@@ -163,7 +163,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		} // if snek runs wall in Y position
 
 		if (snek.snekCollision()) { // this starts method snekCollision method inside snek.java class, and if there
-									// is collision with snek,
+			// is collision with snek,
 			gameOver = true; // gameOver boolean is true
 		} // if
 
@@ -219,7 +219,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 			if (snek.isMoving) // if snek is moving
 				snek.setIsMoving(false); // this is set to false
 		} // if space bar is pressed down
-		
+
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 			if(gameOver) // if game over
 				init();
@@ -302,7 +302,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 		gfx.setColor(Color.white); // sets text color to white
 		gfx.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));// score font and font-size
 		gfx.drawString("High Score: " + highScores[0], linePositionX, linePositionY - 30); // draws string what is
-																							// inside
+		// inside
 
 		// writer
 		PrintWriter writer;

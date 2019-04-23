@@ -6,7 +6,7 @@ package snek;
  * @author Essi Varjonen
  * @author Kim Rosengren
  * @author Miikka Wirtanen
- * @author Siiri Ylönen
+ * @author Siiri Ylï¿½nen
  * @author Viljami Ruokonen
  * 
  * @version 1.0
@@ -44,7 +44,7 @@ public class Point {
 	 * @param x sets value of snek coordinates.
 	 */
 
-	public void setX(int x) { // this method sets snek X cordinate to variable x that are given to it
+	public void setX(int x) { // this method sets snek X coordinate to variable x that are given to it
 		this.x = x;
 	}// setX
 	
@@ -54,7 +54,7 @@ public class Point {
 	 * @param y sets value of snek coordinates.
 	 */
 
-	public void setY(int y) { // this method sets snek Y cordinate to variable y that are given to it
+	public void setY(int y) { // this method sets snek Y coordinate to variable y that are given to it
 		this.y = y;
 	}// setY
 	
