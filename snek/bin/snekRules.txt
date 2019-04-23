@@ -1,4 +1,4 @@
-Snek Rules and Instructions
+Snek v1.0 Rules and Instructions
 
 - Turn the snake with left, right, up and down cursor keys.
 - Press Space to pause the game.
