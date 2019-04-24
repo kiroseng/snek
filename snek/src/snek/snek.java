@@ -57,7 +57,7 @@ public class snek {
 	}// draw
 	
 	/**
-	 * Moves the snek in the game screen if conditions are met.
+	 * Moves the snek in the game screen and grows it if conditions are met.
 	 * 
 	 */
 
