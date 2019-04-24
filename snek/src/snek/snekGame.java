@@ -171,11 +171,7 @@ public class snekGame extends Applet implements Runnable, KeyListener {
 	}// checkGameOver
 
 	/**
-	 * Binds the movement of the snek to keys <i>up, down, left</i> and <i>right</i>
-	 * and pause to <i>space.</i>
-	 * 
-	 * @param e indicates that a keystroke occurred in a component.
-	 * 
+	 * Reloads the game.
 	 */
 
 	@SuppressWarnings("deprecation")
@@ -184,6 +180,14 @@ public class snekGame extends Applet implements Runnable, KeyListener {
         this.init(); // starts the init again
         thread.stop(); // without this the snake speeds up after restart because of a thread delay issue, it is deprecated method
 	}	// reload
+	
+	/**
+	 * Binds the movement of the snek to keys <i>up, down, left</i> and <i>right</i>
+	 * and pause to <i>space</i> and reload to <i>enter.</i>
+	 * 
+	 * @param e indicates that a keystroke occurred in a component.
+	 * 
+	 */
 	
 	public void keyPressed(KeyEvent e) { // method that listens if keys up, down, left, right or spacebar is pressed
 
